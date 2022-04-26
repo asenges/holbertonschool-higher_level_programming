@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-for char in range_char("a", "z"):
-    print(char, end="", sep="")
+for char in range(ord("a"), ord("z") + 1):
+    print(chr(char), end="", sep="")
