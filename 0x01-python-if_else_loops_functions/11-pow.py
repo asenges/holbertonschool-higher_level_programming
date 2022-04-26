@@ -15,4 +15,3 @@ def pow(a, b):
         return 1 / power    
     else:
         return 1
-
