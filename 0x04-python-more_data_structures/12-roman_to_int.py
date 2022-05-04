@@ -17,7 +17,7 @@ def roman_to_int(roman_string):
             dec_numbers.append(roman[i])
         for i in range(1, len(roman_string)):
             if dec_numbers[i - 1] < dec_numbers[i]:
-                dec_numbers[i -1] = -(dec_numbers[i - 1])
+                dec_numbers[i - 1] = -(dec_numbers[i - 1])
         for i in dec_numbers:
             dec_sum += i
-        return dec_sum 
+        return dec_sum
