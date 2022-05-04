@@ -1,0 +1,5 @@
+#!/bin/bash
+chmod -R 777 *
+git add .
+git commit -m "0x04. Python - More Data Structures: Set, Dictionary"
+git push --set-upstream origin main
