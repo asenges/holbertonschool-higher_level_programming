@@ -4,7 +4,7 @@
 
 class Square:
     """ class Square """
-    def __init__(self, size=0, position=(0, 0)):
+    def __init__(self, size=0, pos=(0, 0)):
         """ constructor method """
         if int(size) < 0:
             raise ValueError("size must be >= 0")
@@ -13,12 +13,12 @@ class Square:
         else:
             self.__size = size
 
-        if not isinstance(position, type((int, int))):
+        if not isinstance(pos[0], int) or not isinstance(pos[1], int):
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif not isinstance(position[0], int) or not isinstance(position[1], int):
+        elif not isinstance(pos, type((int, int))):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
-            self.__position = position
+            self.__position = pos
 
     @property
     def size(self):
@@ -43,9 +43,9 @@ class Square:
     @position.setter
     def position(self, value):
         """ __position setter  """
-        if not isinstance(value, type((int, int))):
+        if not isinstance(value[0], int) or not isinstance(value[1], int):
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif not isinstance(value[0], int) or not isinstance(value[1], int):
+        elif not isinstance(value, type((int, int))):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
