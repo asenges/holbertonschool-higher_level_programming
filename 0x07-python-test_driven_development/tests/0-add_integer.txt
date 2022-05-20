@@ -1,0 +1,117 @@
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer(1, 2)
+3
+>>> add_integer(3, 2.6)
+5
+>>> add_integer(5, "Holberton")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+>>> add_integer(42, None)
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+>>> add_integer(27, True)
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+>>> add_integer(-3.3, -2.2)
+-5
+>>> add_integer(2)
+100
+>>> add_integer(4.2, 27)
+31
+>>> add_integer(0.3, "Betty")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+>>> add_integer(2.7, None)
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+>>> add_integer(3.14, False)
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+>>> add_integer(3.141592)
+101
+>>> add_integer('Holberton')
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add_integer("Holberton", "School")
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add_integer("Holberton", 98)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add_integer("Best School", 9.8)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add_integer("None", None)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add_integer("True", False)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add_integer(None, None)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add_integer(None, 127)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add_integer(None, 1.27)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add_integer(None, "enoN")
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add_integer(None, True)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add_integer(None)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add_integer(True, 42)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add_integer(False, 12.7)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add_integer(True, "False")
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add_integer(False, None)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add_integer(True, False)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add_integer(False)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add_integer(float('inf'))
+Traceback (most recent call last):
+    ...
+OverflowError: cannot convert float infinity to integer
+>>> add_integer(float('NaN'))
+Traceback (most recent call last):
+    ...
+ValueError: cannot convert float NaN to integer
