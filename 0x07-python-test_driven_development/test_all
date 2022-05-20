@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "Testing 0-add_integer.py"
+python3 -m doctest -v ./tests/0-add_integer.txt | tail -2
+echo "Testing 2-matrix_divided.py"
+python3 -m doctest -v ./tests/2-matrix_divided.txt | tail -2
