@@ -1,7 +1,9 @@
 #!/bin/bash
-echo "Testing 0-add_integer.py"
+echo ">> Testing 0-add_integer.py"
 python3 -m doctest -v ./tests/0-add_integer.txt | tail -2
-echo "Testing 2-matrix_divided.py"
+echo ">> Testing 2-matrix_divided.py"
 python3 -m doctest -v ./tests/2-matrix_divided.txt | tail -2
-echo "Testing 3-say_my_name.py"
+echo ">> Testing 3-say_my_name.py"
 python3 -m doctest -v ./tests/3-say_my_name.txt | tail -2
+echo ">> Testing 4-print_square.py"
+python3 -m doctest -v ./tests/4-print_square.txt | tail -2
