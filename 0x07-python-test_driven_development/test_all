@@ -1,11 +1,13 @@
 #!/bin/bash
-echo ">> Testing 0-add_integer.py"
+echo ">> Test doctest: 0-add_integer.py"
 python3 -m doctest -v ./tests/0-add_integer.txt | tail -2
-echo ">> Testing 2-matrix_divided.py"
+echo ">> Test doctest: 2-matrix_divided.py"
 python3 -m doctest -v ./tests/2-matrix_divided.txt | tail -2
-echo ">> Testing 3-say_my_name.py"
+echo ">> Test doctest: 3-say_my_name.py"
 python3 -m doctest -v ./tests/3-say_my_name.txt | tail -2
-echo ">> Testing 4-print_square.py"
+echo ">> Test doctest: 4-print_square.py"
 python3 -m doctest -v ./tests/4-print_square.txt | tail -2
-echo ">> Testing 5-text_identation.py" 
+echo ">> Test doctest: 5-text_identation.py" 
 python3 -m doctest -v ./tests/5-text_indentation.txt | tail -2
+echo ">> Test unittest: 6-max_integer.py"
+python3 -m unittest tests.6-max_integer_test 2>&1 | tail -1
