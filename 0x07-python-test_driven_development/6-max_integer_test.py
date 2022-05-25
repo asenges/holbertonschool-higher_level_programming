@@ -8,7 +8,7 @@ class TestMaxInteger(unittest.TestCase):
     """ Class TestMaxInteger """
 
     def test_max_integer(self):
-        """ Test Cases """
+        """ Test All Possible Cases """
         self.assertEqual(max_integer([1, 2, 3, 4, 5, 99]), 99)
         self.assertEqual(max_integer([-99, -5, -4, -3, -2, -1]), -1)
         self.assertEqual(max_integer([1, 7, 9, 3, 5, 2]), 9)
@@ -29,3 +29,7 @@ class TestMaxInteger(unittest.TestCase):
         self.assertRaises(TypeError, max_integer, [2j, 3, 5])
         self.assertEqual(max_integer(), None)
         self.assertEqual(max_integer([1, 4, 1]), 4)
+
+if __name__ == '__main__':
+    """ Main """
+    unittest.main()
