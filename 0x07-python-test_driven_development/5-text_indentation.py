@@ -10,18 +10,16 @@ def text_indentation(text):
     """
     Return: None - prints a text
     """
-    print_spacing = True
     if type(text) is not str:
         raise TypeError("text must be a string")
     else:
-        for i in (text):
-            if i == '.' or i == '?' or i == ':':
-                print(i.strip())
+        line = ""
+        for i in range(len(text)):
+            if text[i] in ['.', ':', '?']:
+                line += text[i]
+                print(line.strip())
                 print()
-                print_spacing = False
+                line = ""
             else:
-                if print_spacing is False:
-                    print_spacing = True
-                    continue
-                else:
-                    print(i, end='')
+                line += text[i]
+        print(line.strip(), end="")
