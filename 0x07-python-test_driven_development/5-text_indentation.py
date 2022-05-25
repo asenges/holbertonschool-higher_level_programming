@@ -24,4 +24,4 @@ def text_indentation(text):
                     print_spacing = True
                     continue
                 else:
-                    print(i.strip(), end='')
+                    print(i, end='')
