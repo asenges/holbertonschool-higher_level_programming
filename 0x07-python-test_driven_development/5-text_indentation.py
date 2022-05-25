@@ -16,7 +16,7 @@ def text_indentation(text):
     else:
         for i in (text):
             if i == '.' or i == '?' or i == ':':
-                print(i)
+                print(i.strip())
                 print()
                 print_spacing = False
             else:
@@ -24,4 +24,4 @@ def text_indentation(text):
                     print_spacing = True
                     continue
                 else:
-                    print(i, end='')
+                    print(i.strip(), end='')
