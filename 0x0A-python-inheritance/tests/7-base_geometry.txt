@@ -1,23 +1,42 @@
+>>> module = __import__('7-base_geometry')
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
->>> bg.integer_validator("Best School", 98)
->>> bg.integer_validator()
-Traceback (most recent call last):
-    ...
-TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
->>> bg.integer_validator("Holberton")
-Traceback (most recent call last):
-    ...
-TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+>>> len(module.__doc__) > 1
+True
+>>> len(BaseGeometry.__doc__) > 1
+True
 >>> bg.integer_validator("name", "John")
 Traceback (most recent call last):
-    ...
+...
 TypeError: name must be an integer
->>> bg.integer_validator("weight", -98)
+>>> bg.integer_validator("name", 2)
+>>> bg.integer_validator(2, 2)
+>>> bg.area()
 Traceback (most recent call last):
-    ...
-ValueError: weight must be greater than 0
->>> bg.integer_validator(0, 0)
+...
+Exception: area() is not implemented
+>>> bg.integer_validator(True, 2)
+>>> bg.integer_validator("name", True)
 Traceback (most recent call last):
-    ...
-ValueError: Unknown format code 's' for object of type 'int'
+...
+TypeError: name must be an integer
+>>> bg.integer_validator("name", 0)
+Traceback (most recent call last):
+...
+ValueError: name must be greater than 0
+>>> bg.integer_validator("name", 0)
+Traceback (most recent call last):
+...
+ValueError: name must be greater than 0
+>>> bg.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+>>> bg.integer_validator(None, None)
+Traceback (most recent call last):
+...
+TypeError: None must be an integer
+>>> bg.integer_validator("one")
+Traceback (most recent call last):
+...
+TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
