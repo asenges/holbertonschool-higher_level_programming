@@ -13,6 +13,6 @@ class MyList(list):
         This method prints a sorted list
         """
         for i in self:
-            if not isinstance(i, int):
+            if type(i) is not int:
                 raise TypeError("must be a list of integers")
         print(sorted(self))
