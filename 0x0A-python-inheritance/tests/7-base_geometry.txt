@@ -40,7 +40,28 @@ TypeError: None must be an integer
 Traceback (most recent call last):
 ...
 TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
->>> bg.integer_validator("name", "John")
+>>> bg.integer_validator("test", (5, 7))
 Traceback (most recent call last):
-    ...
-TypeError: name must be an integer
+...
+TypeError: test must be an integer
+>>> bg.integer_validator("", 1)
+>>> bg.area(1)
+Traceback (most recent call last):
+...
+TypeError: BaseGeometry.area() takes 1 positional argument but 2 were given
+>>> bg.integer_validator("dict", {"key": "value"})
+Traceback (most recent call last):
+...
+TypeError: dict must be an integer
+>>> bg.integer_validator("set", {"hello", "world"})
+Traceback (most recent call last):
+...
+TypeError: set must be an integer
+>>> bg.integer_validator("more", 1, 2)
+Traceback (most recent call last):
+...
+TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 4 were given
+>>> bg.integer_validator("list", [1, 2])
+Traceback (most recent call last):
+...
+TypeError: list must be an integer
