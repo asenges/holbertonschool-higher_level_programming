@@ -1,14 +1,18 @@
 #!/usr/bin/python3
 """
-This module contains function that returns
-the list of available attributes and methods
-of an object
+This module contains a function that checks
+if the object is exactly an instance of the
+specified class
 """
 
 
-def lookup(obj):
+def is_same_class(obj, a_class):
     """
-    This function returns the list of available
-    attributes and methids of an object
+    This function returns True if the object is
+    exactly an instance of the specified class
+    otherwise returns False
     """
-    return(dir(obj))
+    if type(obj) is a_class:
+        return True
+    else:
+        return False
