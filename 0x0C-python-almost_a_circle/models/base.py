@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """ Module Base """
 import json
+from os import path
+
 
 class Base:
     """ class Base """
@@ -53,3 +55,16 @@ class Base:
         if obj:
             obj.update(**dictionary)
         return obj
+
+    @classmethod
+    def load_from_file(cls):
+        """ Loads from file """
+        obj_list = []
+        r_file = cls.__name__ + ".json"
+        if path.isfile(r_file):
+            with open(r_file, 'r') as file:
+                for line in file:
+                    obj = cls.from_json_string(line)
+                    for i in obj:
+                        obj_list.append(cls.create(**i))
+        return obj_list
