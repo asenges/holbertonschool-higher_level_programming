@@ -2,6 +2,7 @@
 """ Module Base """
 import json
 from os import path
+import csv
 
 
 class Base:
@@ -60,11 +61,47 @@ class Base:
     def load_from_file(cls):
         """ Loads from file """
         obj_list = []
-        r_file = cls.__name__ + ".json"
+        r_file = str(cls.__name__) + ".json"
         if path.isfile(r_file):
             with open(r_file, 'r') as file:
                 for line in file:
                     obj = cls.from_json_string(line)
                     for i in obj:
                         obj_list.append(cls.create(**i))
+        return obj_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ Saves to csv file """
+        w_file = str(cls.__name__) + ".csv"
+        with open(w_file, 'w', newline='') as file:
+            w = csv.writer(file)
+            for obj in list_objs:
+                if cls.__name__ == "Rectangle":
+                    w.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
+                if cls.__name__ == "Square":
+                    w.writerow([obj.id, obj.size, obj.x, obj.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ Loads from csv file """
+        obj_list = []
+        r_file = str(cls.__name__) + ".csv"
+        if path.isfile(r_file):
+            with open(r_file, 'r') as file:
+                r = csv.reader(file)
+                for line in r:
+                    if cls.__name__ == "Rectangle":
+                        n_dict = {"id": int(line[0]),
+                                   "width": int(line[1]),
+                                   "height": int(line[2]),
+                                   "x": int(line[3]),
+                                   "y": int(line[4])}
+                    if cls.__name__ == "Square":
+                        n_dict = {"id": int(line[0]),
+                                   "size": int(line[1]),
+                                   "x": int(line[2]),
+                                   "y": int(line[3])}
+                    obj = cls.create(**n_dict)
+                    obj_list.append(obj)
         return obj_list
