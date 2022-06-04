@@ -87,3 +87,14 @@ class Rectangle(Base):
         """ Returns str repr """
         return ("[Rectangle] ({}) {}/{} - {}/{}"\
         .format(self.id, self.x, self.y, self.width, self.height))
+
+    def update(self, *args, **kwargs):
+        """ Assigns args to each attr """
+        attr = {0: "id", 1: "width", 2: "height", 3: "x", 4: "y"}
+        if args:
+            if len(args) <= 5:
+                for i in range(len(args)):
+                    setattr(self, attr[i], args[i])
+        else:
+            for k in kwargs:
+                setattr(self, k, kwargs[k])
