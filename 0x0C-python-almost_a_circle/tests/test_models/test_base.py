@@ -19,16 +19,16 @@ class test_base(unittest.TestCase):
 
     def test_base(self):
         """ Base """
-        base0 = Base(1)
+        base0 = Base()
         self.assertEqual(base0.id, 1)
         base1 = Base()
-        self.assertEqual(base1.id, 1)
+        self.assertEqual(base1.id, 2)
         base2 = Base()
-        self.assertEqual(base2.id, 2)
+        self.assertEqual(base2.id, 3)
         base3 = Base(12)
         self.assertEqual(base3.id, 12)
         base3 = Base()
-        self.assertEqual(base3.id, 3)
+        self.assertEqual(base3.id, 4)
 
     def test_to_json_string(self):
         """ To json string """
