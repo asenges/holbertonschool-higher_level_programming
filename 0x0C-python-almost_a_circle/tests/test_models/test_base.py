@@ -5,6 +5,8 @@ import json
 import pycodestyle
 from os import path
 from models.base import Base
+from models.rectangle import Rectangle
+from models.square import Square
 
 
 class test_base(unittest.TestCase):
