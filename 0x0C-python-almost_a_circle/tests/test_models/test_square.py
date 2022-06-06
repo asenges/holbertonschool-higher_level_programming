@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-"""module tests doc"""
+""" Square unittest """
 import unittest
 from models.square import Square
 
 
 class Test_Square(unittest.TestCase):
-    """square tests"""
+    """ Square """
     def test_instance_method(self):
-        """instances for square test doc"""
+        """ Instance methods """
         sq = Square(1, 2, 3, 4)
         sq1 = Square(1, 2)
         sq2 = Square(1, 2, 3)
@@ -31,12 +31,12 @@ class Test_Square(unittest.TestCase):
             sq_fail = Square(0)
 
     def test_str(self):
-        """str doc test"""
+        """ Str """
         sq = Square(2, 0, 0, 1)
         self.assertEqual(sq.__str__(), '[Square] (1) 0/0 - 2')
 
     def test_update(self):
-        """update test doc"""
+        """ Update """
         sq = Square(4)
         sq.update(1, 2, 3)
         with self.assertRaises(ValueError):
@@ -45,12 +45,12 @@ class Test_Square(unittest.TestCase):
             sq.update(2, 4, [])
 
     def test_area(self):
-        """area test doc"""
+        """ Area """
         sq = Square(2)
         self.assertEqual(sq.area(), 4)
 
     def test_display(self):
-        """display test doc"""
+        """ Display """
         import io
         import contextlib
 
