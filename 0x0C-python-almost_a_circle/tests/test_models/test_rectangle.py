@@ -111,6 +111,18 @@ class TestRectangle(unittest.TestCase):
                 instance = f.getvalue()
         self.assertEqual(instance, '\n ##\n ##\n ##\n')
 
+    def test_documentation(self):
+        """ Documentation test """
+        self.assertTrue(len(Rectangle.__doc__) > 0)
+        self.assertTrue(len(Rectangle.width.__doc__) > 0)
+        self.assertTrue(len(Rectangle.height.__doc__) > 0)
+        self.assertTrue(len(Rectangle.__init__.__doc__) > 0)
+        self.assertTrue(len(Rectangle.area.__doc__) > 0)
+        self.assertTrue(len(Rectangle.display.__doc__) > 0)
+        self.assertTrue(len(Rectangle.__str__.__doc__) > 0)
+        self.assertTrue(len(Rectangle.update.__doc__) > 0)
+        self.assertTrue(len(Rectangle.to_dictionary.__doc__) > 0)
+
 
 if __name__ == '__main__':
     unittest.main()
