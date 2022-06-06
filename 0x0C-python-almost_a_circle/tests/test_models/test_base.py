@@ -17,7 +17,7 @@ class test_base(unittest.TestCase):
         item.__doc__ = ("This {} intentionally has no documentation"
                         .format(decorator))
 
-    def set_zero(self):
+    def test_set_zero(self):
         """ Sets to 0 instance counter """
         Base.__nb_objects = 0
         self.assertEqual(Base.__nb_objects, 0)
