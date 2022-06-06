@@ -14,7 +14,7 @@ class test_base(unittest.TestCase):
     def no_doc(item):
         """ Test decorators """
         decorator = "class" if inspect.isclass(item) else "function"
-        item.__doc__ = ("This {} intentionally has no documentation"
+        item.__doc__ = ("This {} has no documentation"
                         .format(decorator))
 
     def test_set_zero(self):
