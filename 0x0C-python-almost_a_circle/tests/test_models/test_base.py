@@ -13,7 +13,7 @@ class test_base(unittest.TestCase):
     """ Base test """
 
     def test_set_zero(self):
-        """ Sets to 0 instance counter """
+        """ Sets instance counter to zero """
         Base.__nb_objects = 0
         self.assertEqual(Base.__nb_objects, 0)
 
@@ -29,6 +29,12 @@ class test_base(unittest.TestCase):
         self.assertEqual(base3.id, 12)
         base3 = Base()
         self.assertEqual(base3.id, 4)
+        base4 = Base(5)
+        self.assertEqual(base4.id, 5)
+        base5 = Base(0)
+        self.assertEqual(base5.id, 0)
+        base6 = Base(-1)
+        self.assertEqual(base6.id, -1)
 
     def test_to_json_string(self):
         """ To json string """
