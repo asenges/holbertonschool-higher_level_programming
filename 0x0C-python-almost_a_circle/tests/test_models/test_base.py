@@ -1,12 +1,10 @@
 #!/usr/bin/python3
 """ Base unittest """
-from models.base import Base
-from models.rectangle import Rectangle
-from models.square import Square
 import unittest
 import json
 import pycodestyle
 from os import path
+from models.base import Base
 
 
 class test_base(unittest.TestCase):
