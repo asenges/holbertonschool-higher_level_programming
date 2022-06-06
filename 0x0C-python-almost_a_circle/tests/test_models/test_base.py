@@ -11,11 +11,6 @@ from models.square import Square
 
 class test_base(unittest.TestCase):
     """ Base test """
-    def no_doc(item):
-        """ Test decorators """
-        decorator = "class" if inspect.isclass(item) else "function"
-        item.__doc__ = ("This {} has no documentation"
-                        .format(decorator))
 
     def test_set_zero(self):
         """ Sets to 0 instance counter """
@@ -30,6 +25,10 @@ class test_base(unittest.TestCase):
         self.assertEqual(base1.id, 1)
         base2 = Base()
         self.assertEqual(base2.id, 2)
+        base3 = Base(12)
+        self.assertEqual(base3.id, 12)
+        base3 = Base()
+        self.assertEqual(base3.id, 3)
 
     def test_to_json_string(self):
         """ To json string """
@@ -117,16 +116,6 @@ class test_base(unittest.TestCase):
         self.assertEqual(base, [])
         base_new = Base.from_json_string("[]")
         self.assertEqual(base_new, [])
-
-
-class TestCodeFormat(unittest.TestCase):
-    """ Code Format """
-    def test_pycodestyle_conformance(self):
-        """ Pycodestyle """
-        pep = pycodestyle.StyleGuide(quiet=True)
-        res = pep.check_files(['../../models/base.py'])
-        self.assertEqual(res.total_errors, 1,
-                         "You have code style errors.")
 
 
 if __name__ == '__main__':
