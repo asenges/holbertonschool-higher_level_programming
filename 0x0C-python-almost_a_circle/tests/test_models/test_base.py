@@ -1,28 +1,18 @@
 #!/usr/bin/python3
-""" base unittest """
-import unittest
+""" Base unittest """
 from models.base import Base
-import json
-import pycodestyle
 from models.rectangle import Rectangle
 from models.square import Square
+import unittest
+import json
+import pycodestyle
 from os import path
-
-
-class TestCodeFormat(unittest.TestCase):
-    """ Code Format """
-    def test_pycodestyle_conformance(self):
-        """ pycodestyle """
-        pepocho = pycodestyle.StyleGuide(quiet=True)
-        res = pepocho.check_files(['../../models/base.py'])
-        self.assertEqual(res.total_errors, 1,\
-         "You have code style errors.")
 
 
 class test_base(unittest.TestCase):
     """ Base test """
     def no_doc(item):
-        """ decorator for objs that don't need documentation """
+        """ Test decorators """
         decorator = "class" if inspect.isclass(item) else "function"
         item.__doc__ = ("This {} intentionally has no documentation".format(decorator))
 
@@ -36,7 +26,7 @@ class test_base(unittest.TestCase):
         self.assertEqual(base2.id, 2)
 
     def test_to_json_string(self):
-        """ to_json_string """
+        """ To json string """
         sq = Square(1, 2, 3)
         self.assertEqual(Base.to_json_string(None), "[]")
         self.assertEqual(Base.to_json_string([]), "[]")
@@ -56,13 +46,13 @@ class test_base(unittest.TestCase):
             Base.to_json_string()
 
     def test_to_dictionary(self):
-        """ to_dictionary """
+        """ To dictionary """
         rec = Rectangle(1, 2, 3, 4)
         rec_dict = rec.to_dictionary()
         self.assertIs(type(rec_dict), dict)
 
     def test_create_rectangle(self):
-        """ create rectangle"""
+        """ Creates rectangle"""
         rec = Rectangle(1, 2, 3, 4, 5)
         rec_dict = rec.to_dictionary()
         rec_new = Rectangle.create(**rec_dict)
@@ -72,7 +62,7 @@ class test_base(unittest.TestCase):
         self.assertNotEqual(rec, rec_new)
 
     def test_create_square(self):
-        """ create square """
+        """ Creates square """
         sq = Square(1, 2, 3, 4)
         sq_dict = sq.to_dictionary()
         sq_new = Square.create(**sq_dict)
@@ -82,7 +72,7 @@ class test_base(unittest.TestCase):
         self.assertNotEqual(sq, sq_new)
 
     def test_load_from_file(self):
-        """ load from file """
+        """ Loads from file """
         rec = Rectangle(1, 2)
         rec_json = Rectangle.save_to_file([rec])
         if not path.exists("Rectangle.json"):
@@ -99,7 +89,7 @@ class test_base(unittest.TestCase):
             self.assertEqual([sq.to_dictionary()], json.load(f))
 
     def test_save_to_file(self):
-        """ save to file """
+        """ Saves to file """
         rec = Rectangle(1, 2)
         rec_json = Rectangle.save_to_file([rec])
         with open("Rectangle.json", 'r') as f:
@@ -116,11 +106,21 @@ class test_base(unittest.TestCase):
             self.assertEqual([sq.to_dictionary()], json.load(f))
 
     def test_from_json_string(self):
-        """ from json string """
+        """ From json string """
         base = Base.from_json_string(None)
         self.assertEqual(base, [])
         base_new = Base.from_json_string("[]")
         self.assertEqual(base_new, [])
+
+
+class TestCodeFormat(unittest.TestCase):
+    """ Code Format """
+    def test_pycodestyle_conformance(self):
+        """ Pycodestyle """
+        pep = pycodestyle.StyleGuide(quiet=True)
+        res = pep.check_files(['../../models/base.py'])
+        self.assertEqual(res.total_errors, 1,\
+         "You have code style errors.")
 
 
 if __name__ == '__main__':
