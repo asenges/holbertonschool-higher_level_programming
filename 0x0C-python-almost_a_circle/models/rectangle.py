@@ -85,8 +85,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """ Returns str repr """
-        return ("[Rectangle] ({}) {}/{} - {}/{}"\
-        .format(self.id, self.x, self.y, self.width, self.height))
+        return ("[Rectangle] ({}) {}/{} - {}/{}"
+                .format(self.id, self.x, self.y, self.width, self.height))
 
     def update(self, *args, **kwargs):
         """ Assigns args to each attr """
@@ -102,8 +102,8 @@ class Rectangle(Base):
     def to_dictionary(self):
         """ Instance to dictionary """
         obj_dict = {"id": self.id,
-                   "width": self.width,
-                   "height": self.height,
-                   "x": self.x,
-                   "y": self.y}
+                    "width": self.width,
+                    "height": self.height,
+                    "x": self.x,
+                    "y": self.y}
         return obj_dict

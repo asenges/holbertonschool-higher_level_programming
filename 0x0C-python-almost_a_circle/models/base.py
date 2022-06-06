@@ -93,15 +93,15 @@ class Base:
                 for line in r:
                     if cls.__name__ == "Rectangle":
                         n_dict = {"id": int(line[0]),
-                                   "width": int(line[1]),
-                                   "height": int(line[2]),
-                                   "x": int(line[3]),
-                                   "y": int(line[4])}
+                                  "width": int(line[1]),
+                                  "height": int(line[2]),
+                                  "x": int(line[3]),
+                                  "y": int(line[4])}
                     if cls.__name__ == "Square":
                         n_dict = {"id": int(line[0]),
-                                   "size": int(line[1]),
-                                   "x": int(line[2]),
-                                   "y": int(line[3])}
+                                  "size": int(line[1]),
+                                  "x": int(line[2]),
+                                  "y": int(line[3])}
                     obj = cls.create(**n_dict)
                     obj_list.append(obj)
         return obj_list

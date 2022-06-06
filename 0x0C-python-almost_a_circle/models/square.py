@@ -23,8 +23,8 @@ class Square(Rectangle):
 
     def __str__(self):
         """ str repr """
-        return ("[Square] ({}) {}/{} - {}"\
-        .format(self.id, self.x, self.y, super().width))
+        return ("[Square] ({}) {}/{} - {}"
+                .format(self.id, self.x, self.y, super().width))
 
     def update(self, *args, **kwargs):
         """ Assigns attr  """

@@ -14,7 +14,8 @@ class test_base(unittest.TestCase):
     def no_doc(item):
         """ Test decorators """
         decorator = "class" if inspect.isclass(item) else "function"
-        item.__doc__ = ("This {} intentionally has no documentation".format(decorator))
+        item.__doc__ = ("This {} intentionally has no documentation"
+                        .format(decorator))
 
     def test_base(self):
         """ Base """
@@ -119,8 +120,8 @@ class TestCodeFormat(unittest.TestCase):
         """ Pycodestyle """
         pep = pycodestyle.StyleGuide(quiet=True)
         res = pep.check_files(['../../models/base.py'])
-        self.assertEqual(res.total_errors, 1,\
-         "You have code style errors.")
+        self.assertEqual(res.total_errors, 1,
+                         "You have code style errors.")
 
 
 if __name__ == '__main__':
