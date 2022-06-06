@@ -1,14 +1,14 @@
 #!/usr/bin/python3
-"""rectangle test doc"""
+""" Rectangle unittest """
 import unittest
 from models.rectangle import Rectangle
 
 
 class TestRectangle(unittest.TestCase):
-    """rectangle class tests doc"""
+    """ Rectangle """
 
     def test_instance_methods(self):
-        """instances methods test doc"""
+        """ Instance methods """
         rec = Rectangle(2, 3, 0, 0, 1)
         rec1 = Rectangle(1, 2)
         rec2 = Rectangle(1, 2, 3)
@@ -33,7 +33,7 @@ class TestRectangle(unittest.TestCase):
             rec_one_more_fail = Rectangle(1, 2, 3, "4")
 
     def test_update(self):
-        """update test doc"""
+        """ Update """
         rec = Rectangle(2, 3, 0, 0, 1)
         self.assertEqual(rec.to_dictionary(), {'id': 1,
                                                'width': 2,
@@ -61,7 +61,7 @@ class TestRectangle(unittest.TestCase):
             rec_fail = Rectangle(2, 0, 0, 0, 1)
 
     def test_arguments(self):
-        """arguments test doc"""
+        """ Arguments """
         rec = Rectangle(2, 3, 0, 0, 1)
         self.assertEqual(rec.to_dictionary(), {'id': 1,
                                                'width': 2,
@@ -83,12 +83,12 @@ class TestRectangle(unittest.TestCase):
             rec_fail.update(2, 0, 0, 0, 1)
 
     def test_area(self):
-        """area test doc"""
+        """ Area """
         rec = Rectangle(2, 3)
         self.assertEqual(rec.area(), 6)
 
     def test_display(self):
-        """display test doc"""
+        """ Display """
         import io
         import contextlib
 
@@ -100,7 +100,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(instance, '##\n##\n##\n')
 
     def test_display_with_x_and_y(self):
-        """display with x and y test doc"""
+        """ Display with x and y """
         import io
         import contextlib
 
