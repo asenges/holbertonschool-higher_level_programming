@@ -1,7 +1,6 @@
 -- Holberton School SQL Introduction
 -- Alex Senges
-UPDATE 
+DELETE 
+FROM 
 second_table 
-SET 
-score='10' 
-WHERE name='Bob';
+WHERE score<='5';
