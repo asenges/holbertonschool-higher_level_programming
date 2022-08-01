@@ -2,7 +2,7 @@
 
 const input = process.argv;
 
-if (input.length < 3) {
+if (input[2] === undefined) {
   console.log('No argument');
 } else {
   console.log(input[2]);
