@@ -5,6 +5,7 @@
 import MySQLdb
 import sys
 
+
 if __name__ == "__main__":
     """ 
     Main method
@@ -15,10 +16,10 @@ if __name__ == "__main__":
 
     conn = MySQLdb.connect(host="localhost", port=3306, user=user,
                            passwd=passwd, db=db, charset="utf8")
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM states")
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM states")
     query_rows = cursor.fetchall()
     for row in query_rows:
         print(row)
-    cursor.close()
+    cur.close()
     conn.close()
