@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-3. SQL Injection...
+2. Filter states by user input
 """
 if __name__ == "__main__":
     """
