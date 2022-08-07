@@ -2,13 +2,12 @@
 """
 3. SQL Injection...
 """
-import MySQLdb
-import sys
-
 if __name__ == "__main__":
     """
     Main Method
     """
+    import MySQLdb
+    import sys
     state = str(sys.argv[4])
     conn = MySQLdb.connect(host='localhost',
                            port=3306,

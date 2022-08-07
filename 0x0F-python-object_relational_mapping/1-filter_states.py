@@ -2,7 +2,6 @@
 """
 1. Filter states
 """
-
 if __name__ == "__main__":
     """
     Main Method
