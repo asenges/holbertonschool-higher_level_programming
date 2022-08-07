@@ -14,10 +14,10 @@ if __name__ == "__main__":
                            sys.argv[1], sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
     Base.metadata.create_all(engine)
-    SessionMaker = sessionmaker(bind=engine)                                                                                                                                            
+    SessionMaker = sessionmaker(bind=engine)
     session = SessionMaker()
     delete_state = session.query(State).filter(State.name.contains("%a%"))\
-                .all()
+        .all()
     for row in delete_state:
         session.delete(row)
     session.commit()
