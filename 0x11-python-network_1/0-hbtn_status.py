@@ -2,7 +2,7 @@
 """
 0. What's my status? #0
 """
-import urllib.request as request
+from urllib import request
 
 
 if __name__ == "__main__":
