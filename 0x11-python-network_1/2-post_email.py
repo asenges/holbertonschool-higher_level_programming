@@ -5,6 +5,7 @@
 from sys import argv
 from urllib import request, parse
 
+
 if __name__ == "__main__":
     json = parse.urlencode({'email': argv[2]})
     json = data.encode('ascii')
