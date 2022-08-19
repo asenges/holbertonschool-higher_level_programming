@@ -2,10 +2,9 @@
 """ 
 1. Response header value #0
 """
-from urllib import request
-from sys import argv
-
+import urllib
+import sys
 
 if __name__ == "__main__":
-    with request.urlopen(argv[1]) as res:
+    with urllib.request.urlopen(sys.argv[1]) as res:
         print(res.getheader("X-Request-Id"))
