@@ -1,6 +1,6 @@
 $(document).ready(function () {
-  const msg = 'https://fourtonfish.com/hellosalut/?lang=fr';
-  $.getJSON(msg, function (data) {
+  const salut = 'https://stefanbohacek.com/hellosalut/?lang=fr';
+  $.getJSON(salut, function (data) {
     $('#hello').text(data.hello);
   });
 });
